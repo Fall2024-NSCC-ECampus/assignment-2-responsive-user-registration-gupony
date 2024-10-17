@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Join Us! Register Today</title>
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #fef6e4;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .container {
+            margin-top: 50px;
+            max-width: 500px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+        .form-heading {
+            text-align: center;
+            color: #6a5acd;
+            font-size: 2.2em;
+            font-weight: bold;
+            margin-bottom: 30px;
+            letter-spacing: 1.5px;
+            line-height: 1.4;
+            word-spacing: 2px;
+        }
+        .form-control {
+            border-radius: 12px;
+            border: 1px solid #6a5acd;
+            transition: border-color 0.3s ease;
+        }
+        .form-control:focus {
+            border-color: #ff99aa;
+            box-shadow: 0 0 5px rgba(255, 153, 170, 0.5);
+        }
+        .btn-custom {
+            background-color: #ffb6c1;
+            color: white;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .btn-custom:hover {
+            background-color: #ff99aa;
+            transform: scale(1.05);
+        }
+        .footer-note {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #6a5acd;
+        }
+
+        .alert-success {
+            background-color: #c1f1c5;
+            border-color: #a3d8a6;
+            color: #1d774f;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .container {
+            animation: fadeInUp 0.6s ease;
+        }
+    </style>
+</head>
+<body>
+
+<div th:if="${message}" class="alert alert-success">
+    <p th:text="${message}"></p>
+</div>
+
+<div class="container">
+    <h2 class="form-heading">Welcome to the Registration Page! Let’s Get You Signed Up 🌸</h2>
+    <form action="/register" method="post">
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" class="form-control" id="username" name="username" placeholder="Choose a unique username" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" name="password" placeholder="Create a strong password" required>
+        </div>
+        <button type="submit" class="btn btn-custom btn-block">Sign me up!</button>
+    </form>
+    <p class="footer-note">Already a member? <a href="#">Log in here</a></p>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
